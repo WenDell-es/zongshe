@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test5.dao.StudentDao">
+    <resultMap id="StudentResultMap" type="com.test5.entity.Student">
+        <id column="studentID" property="studentID" jdbcType="VARCHAR"></id>
+        <result column="studentName" property="studentName" jdbcType="VARCHAR"></result>
+        <result column="studentPassword" property="studentPassword" jdbcType="VARCHAR"></result>
+        <result column="teamID" property="teamID" jdbcType="INTEGER"></result>
+        <result column="subjectID" property="subjectID" jdbcType="INTEGER"></result>
+    </resultMap>
+    <select id="search" parameterType="com.test5.entity.Student" resultMap="StudentResultMap">
+        select * from student where studentID=#{studentID}
+    </select>
+    <insert id="regist" parameterType="com.test5.entity.Student" >
+        insert into student values(#{studentID},#{studentName},#{studentPassword},#{teamID},#{subjectID})
+    </insert>
+
+
+</mapper>
