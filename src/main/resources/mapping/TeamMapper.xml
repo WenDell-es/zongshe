@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test5.dao.TeamDao">
+<!--插入队伍信息，参数为Team对象，成功后将自增的teamID写回传入对象的teamID-->
+    <insert id="createTeam" parameterType="com.test5.entity.Team.Team" useGeneratedKeys="true" keyProperty="teamID">
+        insert into team values (#{teamID},#{teamLeaderID},#{subjectID})
+    </insert>
+
+    <select id="searchTeam" parameterType="com.test5.entity.Team.Team" resultType="com.test5.entity.Team.Team">
+        select * from team where teamID=#{teamID}
+    </select>
+
+</mapper>

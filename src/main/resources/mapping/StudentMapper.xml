@@ -15,5 +15,8 @@
         insert into student values(#{studentID},#{studentName},#{studentPassword},#{teamID},#{subjectID})
     </insert>
 
+    <update id="update" parameterType="com.test5.entity.Student">
+        update student set studentName=#{studentName},studentPassword=#{studentPassword},teamID=#{teamID},subjectID=#{subjectID} where studentID=#{studentID}
+    </update>
 
 </mapper>

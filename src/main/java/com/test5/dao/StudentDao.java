@@ -7,4 +7,6 @@ import org.springframework.stereotype.Component;
 public interface StudentDao {
     Student search(Student student);
     void regist(Student student);
+
+    void update(Student student);
 }
